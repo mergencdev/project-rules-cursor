@@ -1,0 +1,15 @@
+Rule: prd-accept
+
+Trigger:
+- When the user approves a piece of code and writes a command starting with "all good", this rule is triggered.
+
+Action:
+1. Open the prd.md file.
+2. Find the "## Done" section in the file.
+3. Search for the latest approved output (the one the user confirmed with "all good") in this section.
+4. If this output is not in the "## Done" list, append it to the bottom.
+5. If it already exists, do nothing.
+
+Context:
+- This rule only executes when the user starts their command with "all good".
+- This rule ensures that newly developed features are updated in the @prd.md file.
